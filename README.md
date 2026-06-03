@@ -1,5 +1,7 @@
 # 🤖 Divulga-Kaloferta - Sistema  Completo
 
+https://www.divulgakaloferta.com.br/
+
 Este repositório funciona exclusivamente como um **Portfólio de Demonstração Visual e Arquitetural**. O código-fonte deste software é proprietário e protegido, sendo disponibilizado aqui apenas através de registros fotográficos do sistema em execução e da engenharia do seu código.
 
 O sistema consiste num ecossistema completo de administração, com landing page responsiva, painel analítico de métricas em tempo real e uma robusta API REST para monitoramento de fluxos
@@ -110,3 +112,5 @@ O comportamento do agente é guiado por pipelines de processamento e heurística
 ``  
   *(Na imagem: O link bruto enviado pelo usuário é interceptado, enriquecido com inteligência de copywriting e formatado pelo agente em menos de 3 segundos)
 
+ Política de Privacidade e Termos de Uso https://www.divulgakaloferta.com.br/privacy-policy.html
+Última atualização: 13 de Janeiro de 2026
