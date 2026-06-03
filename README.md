@@ -83,43 +83,14 @@ A inteligência de back-end opera de forma isolada, separando requisições púb
 
 O sistema foi estruturado sob o conceito de design de camadas para garantir modularidade e desacoplamento:
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                    CAMADA DE APRESENTAÇÃO                    │
-├─────────────────────────────────────────────────────────────┤
-│  • Dashboard Web (Next.js / React / TailwindCSS)             │
-│  • Bot Telegram Autónomo (node-telegram-bot-api)             │
-│  • Automação de WhatsApp (WhatsApp Web.js)                 │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-┌────────────────▼────────────────────────────────────────────┐
-│                   CAMADA DE NEGÓCIO (CORE)                  │
-├─────────────────────────────────────────────────────────────┤
-│  • Affiliate Manager (Shopee, Mercado Livre, Amazon, etc.)  │
-│  • Monitor Bot Engine (Telegram Userbot com GramJS)         │
-│  • Conversor Dinâmico de Links (Detetor de Plataforma)      │
-│  • Módulo de Gateways de Pagamento (Mercado Pago / PIX)     │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-┌────────────────▼────────────────────────────────────────────┐
-│                   CAMADA DE INTEGRAÇÃO                      │
-├─────────────────────────────────────────────────────────────┤
-│  • LunaProxy Unlocker API (Anti-bot Web Scraping)           │
-│  • Stealth Mode (Emulação de Headers Reais)                 │
-│  • Camada de Cache (Memory Optimization / TTL)               │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-┌────────────────▼────────────────────────────────────────────┐
-│                      CAMADA DE DADOS                        │
-├─────────────────────────────────────────────────────────────┤
-│  • SQLite Instance A (bot.db - Autenticação e Assinaturas)  │
-│  • SQLite Instance B (monitor.db - Mapeamentos e Logs)      │
-└─────────────────────────────────────────────────────────────┘
+
 
 
 ###🧠 Módulo: Agente de IA no Telegram (Autonomous AI Agent)
 
 O ecossistema **Divulga Kaloferta** integra um Agente de IA autônomo focado em *Social Commerce* e curadoria automatizada de ofertas. Operando através de uma infraestrutura híbrida que combina o `node-telegram-bot-api` e o `gramjs` (Telegram Userbot), o agente atua como um tomador de decisões em tempo real dentro dos canais monitorados.
+<img width="1174" height="1036" alt="1" src="https://github.com/user-attachments/assets/f0ed49b6-afec-43a3-9cca-f87db88c017f" />
+
 
 ### ⚡ Capacidades e Engenharia do Agente
 
@@ -128,14 +99,14 @@ O comportamento do agente é guiado por pipelines de processamento e heurística
 * **Geração Inteligente de Copywriting (Prompt Engine):** O agente não apenas replica dados; ele processa os inputs brutos de produtos e gera dinamicamente textos persuasivos baseados em múltiplos modelos pré-definidos (Marketing, Minimalista e IA Cognitiva).
 * **Análise Semântica e Filtro de Qualidade (Data Sanitization):** Antes de encaminhar qualquer oferta para os canais de destino, o agente realiza uma validação estrutural estrita[cite: 4]. Se identificar que os dados extraídos via APIs ou scraping possuem inconsistências (títulos incompletos, preços zerados ou imagens corrompidas), o agente bloqueia o envio autonomamente para proteger o engajamento do canal
 * **Orquestração de Sessões e Fallbacks:** O agente gerencia sessões de usuário de forma independente (via QR Code ou Telefone), monitora fluxos de múltiplos grupos de origem simultaneamente e aciona rotinas de contingência (como rotação de cookies e chaves de scraping através do LunaProxy) sem necessidade de intervenção humana
+<img width="1182" height="1028" alt="2" src="https://github.com/user-attachments/assets/4754f550-2d75-4b87-ae79-5102094db42c" />
+<img width="1174" height="1046" alt="3" src="https://github.com/user-attachments/assets/0e91c3c6-898c-469f-9ef3-c59e81700e91" />
+<img width="1179" height="1038" alt="Sem título" src="https://github.com/user-attachments/assets/da192fb5-3d71-429a-8738-9b504e1a206b" />
 
 ### 📸 O Agente em Ação (Demonstração Visual)
 
 * **Tomada de Decisão e Formatação de Oferta por IA:**  
-  `![Agente de IA Processando Link](screenshots/ai_agent_action.png)`  
+  <img width="683" height="582" alt="6" src="https://github.com/user-attachments/assets/52390486-2b6f-4525-a7e0-be315b70fa4b" />
+``  
   *(Na imagem: O link bruto enviado pelo usuário é interceptado, enriquecido com inteligência de copywriting e formatado pelo agente em menos de 3 segundos)
 
-<img width="1174" height="1036" alt="1" src="https://github.com/user-attachments/assets/b1f5a3f7-0f4c-4e06-8c13-efbb59f98229" />
-<img width="1182" height="1028" alt="2" src="https://github.com/user-attachments/assets/51a99db0-863c-4211-bbc1-b48dcb6f4705" />
-<img width="1174" height="1046" alt="3" src="https://github.com/user-attachments/assets/fc394c7b-a42d-455e-b447-17f103633a27" />
-<img width="1179" height="1038" alt="Sem título" src="https://github.com/user-attachments/assets/adb5143a-5079-4c37-8735-864c7a95ebb9" />
